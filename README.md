@@ -12,6 +12,7 @@ Use of this software is entirely at your own risk.
 
 
 Example:
+
 ![alt text](https://github.com/3Draco/Krita_exact_guides/blob/main/example.png)
 
 1. View Options
