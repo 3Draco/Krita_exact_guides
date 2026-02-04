@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+        /* Minimalistisches Design: Passt sich dem System/Krita an */
+        body { 
+            font-family: sans-serif; 
+            padding: 25px; 
+            line-height: 1.6; 
+        }
+        h1 { 
+            border-bottom: 2px solid #555; 
+            padding-bottom: 5px;
+        }
+        h2 { 
+            color: #3498db; 
+            margin-top: 30px; 
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+        }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        strong { color: #fff; } /* Optional: Macht wichtige Begriffe etwas heller */
+        .meta { font-style: italic; color: #888; margin-bottom: 30px; }
+        hr { border: 0; border-top: 1px solid #444; margin: 40px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>Exact Guides</h1>
+    <div class="meta">Version: 1.0 | Developer: 3Draco</div>
+
+    <section>
+        <h2>1. View Options</h2>
+        <ul>
+            <li><strong>Show Guides:</strong> Toggles the visibility of all guides on your canvas.</li>
+            <li><strong>Show Rulers:</strong> Shows or hides the Krita rulers at the top and left edges.</li>
+            <li><strong>Lock Guides:</strong> Prevents guides from being moved accidentally with the mouse.</li>
+            <li><strong>Snap:</strong> Enables snapping, so your brush or selections "stick" to the guides.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>2. Layout Management</h2>
+        <p>You can save your current guide configuration for future use:</p>
+        <ul>
+            <li><strong>Save:</strong> Give your current layout a name to store it on your hard drive.</li>
+            <li><strong>Load:</strong> Choose a previously saved layout from the dropdown menu and apply it to your current document.</li>
+            <li><strong>Delete:</strong> Removes the selected layout from your saved list.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>3. Units: Pixels vs. Percentage</h2>
+        <p>This tool allows you to work with two different units:</p>
+        <ul>
+            <li><strong>Pixels (px):</strong> Ideal for technical drawings or web design where fixed sizes are required.</li>
+            <li><strong>Percentage (%):</strong> Perfect for artistic compositions (like the Rule of Thirds). Percentage guides remain relative to the image size, even if you change the unit back and forth.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>4. Custom Names and Direct Entry</h2>
+        <p>In the table, you can see a list of all active guides:</p>
+        <ul>
+            <li><strong>Renaming:</strong> Double-click the name (e.g., "H-0") to give it a custom description (e.g., "Horizon").</li>
+            <li><strong>Direct Entry:</strong> Double-click the position value to type in an exact coordinate. In percentage mode, you can use decimals (e.g., 33.33).</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>5. Update and Maintenance</h2>
+        <ul>
+            <li><strong>Update (Refresh):</strong> Since Krita does not always notify plugins when a guide is moved manually with the mouse, use this button to synchronize the list with the canvas.</li>
+            <li><strong>Clear All:</strong> Deletes all horizontal and vertical guides from the current document at once.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>6. Image Split</h2>
+        <p>This button opens Krita's built-in "Image Split" tool, allowing you to quickly divide your canvas into equal sections or prepare it for export.</p>
+    </section>
+
+    <hr>
+
+    <h1>Exact Guides (Deutsch)</h1>
+    <div class="meta">Version: 1.0 | Ersteller: 3Draco</div>
+
+    <section>
+        <h2>1. Ansichts-Optionen</h2>
+        <ul>
+            <li><strong>Guides anzeigen:</strong> Schaltet die Sichtbarkeit aller Hilfslinien auf deiner Leinwand um.</li>
+            <li><strong>Lineale anzeigen:</strong> Blendet die Krita-Lineale am oberen und linken Rand ein oder aus.</li>
+            <li><strong>Guides sperren:</strong> Verhindert, dass Hilfslinien versehentlich mit der Maus verschoben werden.</li>
+            <li><strong>Einrasten:</strong> Aktiviert das "Snap"-Verhalten, sodass Pinsel oder Auswahlen an den Linien haften bleiben.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>2. Layout-Verwaltung</h2>
+        <p>Du kannst deine aktuelle Konfiguration von Hilfslinien für die zukünftige Verwendung speichern:</p>
+        <ul>
+            <li><strong>Speichern:</strong> Gib deinem aktuellen Layout einen Namen, um es dauerhaft auf der Festplatte zu speichern.</li>
+            <li><strong>Laden:</strong> Wähle ein zuvor gespeichertes Layout aus dem Menü aus, um es auf das aktuelle Dokument anzuwenden.</li>
+            <li><strong>Löschen:</strong> Entfernt das ausgewählte Layout aus deiner Liste.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>3. Einheiten: Pixel vs. Prozent</h2>
+        <p>Dieses Tool ermöglicht das Arbeiten in zwei verschiedenen Einheiten:</p>
+        <ul>
+            <li><strong>Pixel (px):</strong> Ideal für technisches Zeichnen oder Webdesign, wo feste Größen wichtig sind.</li>
+            <li><strong>Prozent (%):</strong> Perfekt für künstlerische Kompositionen (z. B. Drittel-Regel). Prozentuale Linien bleiben relativ zur Bildgröße erhalten.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>4. Eigene Namen und Direkteingabe</h2>
+        <p>In der Tabelle siehst du alle aktiven Hilfslinien:</p>
+        <ul>
+            <li><strong>Benennen:</strong> Klicke doppelt auf den Namen (z. B. "H-0"), um eine eigene Beschreibung einzugeben (z. B. "Horizont").</li>
+            <li><strong>Direkteingabe:</strong> Klicke doppelt auf den Positionswert, um eine exakte Koordinate einzutippen. Im Prozentmodus werden Dezimalstellen (z. B. 33.33) unterstützt.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>5. Aktualisierung und Wartung</h2>
+        <ul>
+            <li><strong>Aktualisieren:</strong> Da Krita Plugins nicht immer automatisch benachrichtigt, wenn eine Linie manuell verschoben wird, nutzt du diesen Button, um die Liste zu synchronisieren.</li>
+            <li><strong>Alle löschen:</strong> Entfernt sofort alle horizontalen und vertikalen Hilfslinien aus dem aktuellen Dokument.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>6. Bild unterteilen</h2>
+        <p>Dieser Button öffnet Krita's integriertes "Bild unterteilen"-Werkzeug, mit dem du die Leinwand schnell in gleichgroße Abschnitte zerlegen kannst.</p>
+    </section>
+
+</body>
+</html>

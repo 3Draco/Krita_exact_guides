@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=Krita/PythonPlugin
+X-KDE-Library=exact_guides
+X-Python-2-Compatible=false
+X-Krita-Python-Extension-Name=exact_guides
+X-Krita-Manual=manual/manual.html
+
+# Name des Plugins
+Name=Exact Guides
+Name[de]=Exact Guides
+
+# Kurzbeschreibung (wird in der Liste oben angezeigt)
+Comment=A pixel-perfect alignment tool for guides with layout saving features.
+Comment[de]=Ein Tool zur pixelgenauen Ausrichtung von Hilfslinien mit Layout-Speicherung.
