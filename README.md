@@ -11,6 +11,8 @@ This software is provided "as is," without warranty of any kind, express or impl
 Use of this software is entirely at your own risk.
 
 
+![alt text](https://github.com/3Draco/Krita_exact_guides/blob/main/example.png)
+
 1. View Options
 Show Guides: Toggles the visibility of all guides on your canvas.
 Show Rulers: Shows or hides the Krita rulers at the top and left edges.
