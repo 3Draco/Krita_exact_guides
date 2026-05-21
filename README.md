@@ -43,8 +43,13 @@ Clear All: Deletes all horizontal and vertical guides from the current document 
 6. Image Split
 This button opens Krita's built-in "Image Split" tool, allowing you to quickly divide your canvas into equal sections or prepare it for export.
 
+--------------------------------------------------------
 
+Exact Guides
+Version: 1.0.1 | Developer: 3Draco
 
++ Add button that appends the guides from a saved layout to the existing guides in your current document without clearing the ones already there.
+  
 --------------------------------------------------------
 
 If you enjoy my work and want to support this project, you can buy me a coffee!
