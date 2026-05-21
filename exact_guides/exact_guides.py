@@ -14,7 +14,7 @@ class ExactGuidesDocker(DockWidget):
         self.setWindowTitle(self.texts["title"])
         self._block_signals = False
         self.custom_names = {} 
-        self.version = "1.0"
+        self.version = "1.0.1"
         self.unit = "px" 
 
         self.save_path = os.path.join(os.path.expanduser("~"), ".krita_guides_layouts.json")
@@ -63,7 +63,7 @@ class ExactGuidesDocker(DockWidget):
         save_layout.addWidget(self.layout_selector)
         
         btn_row = QHBoxLayout()
-        for btn_key, func in [("save", self.save_current_layout), ("load", self.load_selected_layout), ("delete", self.delete_selected_layout)]:
+        for btn_key, func in [("save", self.save_current_layout), ("load", self.load_selected_layout), ("add", self.append_selected_layout), ("delete", self.delete_selected_layout)]:
             btn = QPushButton(self.texts[btn_key])
             btn.clicked.connect(func)
             btn_row.addWidget(btn)
@@ -110,13 +110,13 @@ class ExactGuidesDocker(DockWidget):
 
     def get_strings(self, lang):
         db = {
-            "de": { "title": "Exact Guides", "show_guides": "Guides anzeigen", "show_rulers": "Lineale anzeigen", "lock_guides": "Guides sperren", "snap_guides": "Einrasten", "layouts": "Layouts", "save": "Speichern", "load": "Laden", "delete": "Löschen", "refresh": "Aktualisieren", "clear_all": "Alle löschen", "image_split": "Bild unterteilen...", "col_name": "Name", "col_pos": "Position", "confirm_del": "Löschen?", "confirm_clear": "Alle Guides löschen?", "table_label": "Hilfslinien:" },
-            "en": { "title": "Exact Guides", "show_guides": "Show Guides", "show_rulers": "Show Rulers", "lock_guides": "Lock Guides", "snap_guides": "Snap", "layouts": "Saved Layouts", "save": "Save", "load": "Load", "delete": "Delete", "refresh": "Update", "clear_all": "Clear All", "image_split": "Image Split...", "col_name": "Name", "col_pos": "Position", "confirm_del": "Delete?", "confirm_clear": "Clear all?", "table_label": "Guides List:" },
-            "fr": { "title": "Exact Guides", "show_guides": "Afficher les guides", "show_rulers": "Afficher les règles", "lock_guides": "Verrouiller les guides", "snap_guides": "Magnétisme", "layouts": "Dispositions", "save": "Enregistrer", "load": "Charger", "delete": "Supprimer", "refresh": "Actualiser", "clear_all": "Tout effacer", "image_split": "Diviser l'image...", "col_name": "Nom", "col_pos": "Position", "confirm_del": "Supprimer?", "confirm_clear": "Effacer tout?", "table_label": "Guides:" },
-            "es": { "title": "Exact Guides", "show_guides": "Mostrar guías", "show_rulers": "Mostrar reglas", "lock_guides": "Bloquear guías", "snap_guides": "Ajustar", "layouts": "Diseños", "save": "Guardar", "load": "Cargar", "delete": "Eliminar", "refresh": "Actualizar", "clear_all": "Borrar todo", "image_split": "Dividir imagen...", "col_name": "Nombre", "col_pos": "Posición", "confirm_del": "¿Eliminar?", "confirm_clear": "¿Borrar todo?", "table_label": "Guías:" },
-            "it": { "title": "Exact Guides", "show_guides": "Mostra guide", "show_rulers": "Mostra righelli", "lock_guides": "Blocca guide", "snap_guides": "Snap", "layouts": "Layout", "save": "Salva", "load": "Carica", "delete": "Elimina", "refresh": "Aggiorna", "clear_all": "Cancella tutto", "image_split": "Dividi immagine...", "col_name": "Nome", "col_pos": "Posizione", "confirm_del": "Elimina?", "confirm_clear": "Cancella tutto?", "table_label": "Guide:" },
-            "ja": { "title": "Exact Guides", "show_guides": "ガイドを表示", "show_rulers": "定規を表示", "lock_guides": "ガイドをロック", "snap_guides": "スナップ", "layouts": "レイアウト", "save": "保存", "load": "読み込み", "delete": "削除", "refresh": "更新", "clear_all": "すべて消去", "image_split": "画像を分割...", "col_name": "名前", "col_pos": "位置", "confirm_del": "削除?", "confirm_clear": "消去しますか?", "table_label": "ガイドリスト:" },
-            "zh": { "title": "Exact Guides", "show_guides": "显示辅助线", "show_rulers": "显示标尺", "lock_guides": "锁定辅助线", "snap_guides": "对齐", "layouts": "已保存布局", "save": "保存", "load": "加载", "delete": "删除", "refresh": "刷新", "clear_all": "清除全部", "image_split": "分割图像...", "col_name": "名称", "col_pos": "位置", "confirm_del": "删除?", "confirm_clear": "清除所有?", "table_label": "辅助线列表:" }
+            "de": { "title": "Exact Guides", "show_guides": "Guides anzeigen", "show_rulers": "Lineale anzeigen", "lock_guides": "Guides sperren", "snap_guides": "Einrasten", "layouts": "Layouts", "save": "Speichern", "load": "Laden", "add": "Hinzufügen", "delete": "Löschen", "refresh": "Aktualisieren", "clear_all": "Alle löschen", "image_split": "Bild unterteilen...", "col_name": "Name", "col_pos": "Position", "confirm_del": "Löschen?", "confirm_clear": "Alle Guides löschen?", "table_label": "Hilfslinien:", "guides_color": "Farbe der Guides:", "choose_color": "Farbe wählen" },
+            "en": { "title": "Exact Guides", "show_guides": "Show Guides", "show_rulers": "Show Rulers", "lock_guides": "Lock Guides", "snap_guides": "Snap", "layouts": "Saved Layouts", "save": "Save", "load": "Load", "add": "Add", "delete": "Delete", "refresh": "Update", "clear_all": "Clear All", "image_split": "Image Split...", "col_name": "Name", "col_pos": "Position", "confirm_del": "Delete?", "confirm_clear": "Clear all?", "table_label": "Guides List:", "guides_color": "Guides Color:", "choose_color": "Choose Color" },
+            "fr": { "title": "Exact Guides", "show_guides": "Afficher les guides", "show_rulers": "Afficher les règles", "lock_guides": "Verrouiller les guides", "snap_guides": "Magnétisme", "layouts": "Dispositions", "save": "Enregistrer", "load": "Charger", "add": "Ajouter", "delete": "Supprimer", "refresh": "Actualiser", "clear_all": "Tout effacer", "image_split": "Diviser l'image...", "col_name": "Nom", "col_pos": "Position", "confirm_del": "Supprimer?", "confirm_clear": "Effacer tout?", "table_label": "Guides:", "guides_color": "Couleur des guides:", "choose_color": "Choisir la couleur" },
+            "es": { "title": "Exact Guides", "show_guides": "Mostrar guías", "show_rulers": "Mostrar reglas", "lock_guides": "Bloquear guías", "snap_guides": "Ajustar", "layouts": "Diseños", "save": "Guardar", "load": "Cargar", "add": "Añadir", "delete": "Eliminar", "refresh": "Actualizar", "clear_all": "Borrar todo", "image_split": "Dividir image...", "col_name": "Nombre", "col_pos": "Posición", "confirm_del": "¿Eliminar?", "confirm_clear": "¿Borrar todo?", "table_label": "Guías:", "guides_color": "Color de las guías:", "choose_color": "Elegir color" },
+            "it": { "title": "Exact Guides", "show_guides": "Mostra guide", "show_rulers": "Mostra righelli", "lock_guides": "Blocca guide", "snap_guides": "Snap", "layouts": "Layout", "save": "Salva", "load": "Carica", "add": "Aggiungi", "delete": "Elimina", "refresh": "Aggiorna", "clear_all": "Cancella tutto", "image_split": "Dividi immagine...", "col_name": "Nome", "col_pos": "Posizione", "confirm_del": "Elimina?", "confirm_clear": "Cancella tutto?", "table_label": "Guide:", "guides_color": "Colore delle guide:", "choose_color": "Scegli il colore" },
+            "ja": { "title": "Exact Guides", "show_guides": "ガイドを表示", "show_rulers": "定規を表示", "lock_guides": "ガイドをロック", "snap_guides": "スナップ", "layouts": "レイアウト", "save": "保存", "load": "読み込み", "add": "追加", "delete": "削除", "refresh": "更新", "clear_all": "すべて消去", "image_split": "画像を分割...", "col_name": "名前", "col_pos": "位置", "confirm_del": "削除?", "confirm_clear": "消去しますか?", "table_label": "ガイドリスト:", "guides_color": "ガイドの色彩:", "choose_color": "色を選択" },
+            "zh": { "title": "Exact Guides", "show_guides": "显示辅助线", "show_rulers": "显示标尺", "lock_guides": "锁定辅助线", "snap_guides": "对齐", "layouts": "已保存布局", "save": "保存", "load": "加载", "add": "添加", "delete": "删除", "refresh": "刷新", "clear_all": "清除全部", "image_split": "分割图像...", "col_name": "名称", "col_pos": "位置", "confirm_del": "删除?", "confirm_clear": "清除所有?", "table_label": "辅助线列表:", "guides_color": "辅助线颜色:", "choose_color": "选择颜色" }
         }
         return db.get(lang, db["en"])
 
@@ -208,6 +208,32 @@ class ExactGuidesDocker(DockWidget):
             data = self.saved_layouts[name]
             doc.setHorizontalGuides(data["h"]); doc.setVerticalGuides(data["v"])
             self.custom_names = {eval(k): v for k, v in data.get("names", {}).items()}
+            self.refresh_list()
+
+    def append_selected_layout(self):
+        name = self.layout_selector.currentText()
+        doc = Krita.instance().activeDocument()
+        if name in self.saved_layouts and doc:
+            data = self.saved_layouts[name]
+            existing_h = doc.horizontalGuides()
+            existing_v = doc.verticalGuides()
+            
+            offset_h = len(existing_h)
+            offset_v = len(existing_v)
+            
+            new_h = existing_h + data.get("h", [])
+            new_v = existing_v + data.get("v", [])
+            
+            doc.setHorizontalGuides(new_h)
+            doc.setVerticalGuides(new_v)
+            
+            for k, v in data.get("names", {}).items():
+                try:
+                    axis, index = eval(k)
+                    offset = offset_h if axis == 'h' else offset_v
+                    self.custom_names[(axis, index + offset)] = v
+                except:
+                    pass
             self.refresh_list()
 
     def delete_selected_layout(self):
