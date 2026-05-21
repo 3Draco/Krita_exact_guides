@@ -45,6 +45,7 @@ This button opens Krita's built-in "Image Split" tool, allowing you to quickly d
 
 
 
+--------------------------------------------------------
 
 If you enjoy my work and want to support this project, you can buy me a coffee!
 
