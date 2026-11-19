@@ -13,7 +13,16 @@ Use of this software is entirely at your own risk.
 
 Example:
 
-![alt text](https://github.com/3Draco/Krita_exact_guides/blob/main/example.png)
+![Exact Guides Example](example.png)
+
+## How to Install & Find the Docker
+
+1. Download `exact_guides.zip` from the releases.
+2. In Krita, go to **Tools → Scripts → Import Python Plugin from File...** and select `exact_guides.zip`.
+3. Restart Krita.
+4. Enable the docker via **Settings → Dockers → Exact Guides**:
+
+![How to find Exact Guides in Krita](doc/howtofind.png)
 
 1. View Options
 Show Guides: Toggles the visibility of all guides on your canvas.
@@ -32,7 +41,7 @@ This tool allows you to work with two different units:
 Pixels (px): Ideal for technical drawings or web design where fixed sizes are required.
 Percentage (%): Perfect for artistic compositions (like the Rule of Thirds). Percentage guides remain relative to the image size, even if you change the unit back and forth.
 
-5. Custom Names and Direct Entry
+4. Custom Names and Direct Entry
 In the table, you can see a list of all active guides:
 Renaming: Double-click the name (e.g., "H-0") to give it a custom description (e.g., "Horizon").
 Direct Entry: Double-click the position value to type in an exact coordinate. In percentage mode, you can use decimals (e.g., 33.33).
